@@ -8,13 +8,13 @@ namespace fightsimv1
 {
     class Fighter
     {
-        int hp;
+        public int hp = 100;
 
-        Random generator = new Random();
+        static Random generator = new Random();
 
         public string name;
 
-        int Attack()
+        public int Attack()
         {
             int minAttack = 5;
             int maxAttack = 20;
@@ -22,7 +22,7 @@ namespace fightsimv1
             return generator.Next(minAttack, maxAttack);            
         }
 
-        void hurt(int amount)
+        public void Hurt(int amount)
         {
             hp = hp - amount;
 
@@ -32,7 +32,7 @@ namespace fightsimv1
             }
         }
 
-        bool isAlive()
+        public bool isAlive()
         {
             if(hp == 0)
             {
@@ -44,7 +44,7 @@ namespace fightsimv1
             }
         }
 
-        int GetHp()
+        public int GetHp()
         {
             return hp;
         }
